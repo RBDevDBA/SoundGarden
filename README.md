@@ -1,7 +1,7 @@
 
 # Sites Dinâmicos - Gama Academy #48 - Grupo 06
 
-Nosso grupo colocou em prática os conhecimentos de Javascript
+Nosso grupo buscou colocar em prática os conhecimentos de Javascript
 HTML & CSS criando um site com conteúdo dinâmico e
 consumo de API.
 

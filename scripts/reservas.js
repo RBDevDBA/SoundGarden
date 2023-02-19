@@ -1,4 +1,4 @@
-const BASE_URL = 'https://soundgarden-api.vercel.app/bookings';
+const BASE_URL = "https://soundgarden-api.vercel.app/bookings";
 const listaReservas = document.querySelector(".table-body");
 let outputReservas = "";
 
@@ -10,7 +10,7 @@ const nomeParam = urlParams.get("_id");
 const carregando = document.querySelector(".carregando");
 carregando.style.display = "none";
 
-fetch(`${BASE_URL}/bookings/event/${nomeParam}`)
+fetch("https://soundgarden-api.vercel.app/bookings ${nomeParam}")
   .then((value) => {
     return value.json();
   })

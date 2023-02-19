@@ -18,7 +18,7 @@ const formatNumber = (numero) => {
 
 const preencherFormulario = async () => {
   try {
-    const resposta = await fetch(`${BASE_URL}/events/${nomeParam}`);
+    const resposta = await fetch("https://soundgarden-api.vercel.app//events/:id");
     const conteudoResposta = await resposta.json();
     const newDate = new Date(conteudoResposta.scheduled);
 

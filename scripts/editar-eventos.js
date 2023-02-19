@@ -18,7 +18,7 @@ const formatNumber = (numero) => {
 
 const resposta = async () => {
   try {
-    const resposta = await fetch(`${BASE_URL}/events/${nomeParam}`);
+    const resposta = await fetch("https://soundgarden-api.vercel.app/events/:id");
     if (resposta.ok) {
       const conteudoResposta = await resposta.json();
       inputNome.value = conteudoResposta.name;

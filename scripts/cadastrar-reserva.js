@@ -25,7 +25,7 @@ function click2() {
           },
         };
 
-        const resposta = await fetch(`${BASE_URL}/bookings`, opcoes);
+        const resposta = await fetch ("https://soundgarden-api.vercel.app/bookings", opcoes);
         const conteudoResposta = await resposta.json();
 
         if (resposta.ok) {

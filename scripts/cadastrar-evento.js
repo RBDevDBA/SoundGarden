@@ -29,7 +29,7 @@ form.onsubmit = async (evento) => {
       redirect: "follow",
     };
 
-    const resposta = await fetch(`${BASE_URL}/events`, opcoes);
+    const resposta = await fetch("$https://soundgarden-api.vercel.app/events", opcoes);
     const conteudoResposta = await resposta.json();
     console.log(conteudoResposta);
 

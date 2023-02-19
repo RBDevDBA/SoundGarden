@@ -15,7 +15,7 @@ const formatarData = (data) => {
   return dataFormatada;
 };
 
-fetch(`${BASE_URL}/events`)
+fetch("https://soundgarden-api.vercel.app/bookings/events")
   .then((value) => {
     return value.json();
   })

@@ -10,7 +10,7 @@ const botaoDeletar = document.querySelector("button");
 // Busca as informações do evento e preenche o formulário com elas
 const carregarEvento = async () => {
   try {
-    const resposta = await fetch(`${BASE_URL}/bookings/${nomeParam}`);
+    const resposta = await fetch("https://soundgarden-api.vercel.app/events/bookings/${nomeParam}");
     if (!resposta.ok) {
       throw new Error("Não foi possível carregar dados da página.");
     }
