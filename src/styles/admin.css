@@ -1,0 +1,29 @@
+.botoes-admin {
+    width: 278px;
+}
+
+#tabela-responsividade {
+    display: none;
+  }
+
+      @media (max-width: 500px) {
+        th {
+            display: none;
+        }    
+    td {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    tbody {
+
+        align-items: center;    
+    }
+
+    .btn-dark {
+        max-height: 38px;
+    }
+
+
+}

@@ -1,0 +1,69 @@
+.container {
+
+    display: flex;
+    flex: column;
+    justify-content: center;
+    align-items: center;
+    
+    }
+    
+    @media (max-width: 900px) {
+        body {
+        width: 100%;
+        }
+        footer {
+        width: 100%;
+        }
+
+        .btn #botao-reservar {
+        width: 160px;
+        align-items: center;
+
+        }
+
+        article.evento {
+            width: 300px;
+            }
+        .full {
+            display: flex;
+            flex-direction: column;
+
+        }
+        #todos-eventos  {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 200 px;
+            
+        }
+    
+        .row {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        .col img {
+        
+            width: 75%;
+        }
+    
+        header{ 
+        width: 100%;
+        }
+        .slider {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 500px) {
+    footer .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        }
+     .row {align-items: center;}
+         
+    }

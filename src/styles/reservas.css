@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+
+}
+
+    @media (max-width: 1000px) {
+        .p-5 {
+            padding: 0px 50px !important;
+        }
+
+        #lateral  {
+            display: none  !important;
+        }
+        .formulario {
+            width: max(900px, 400px);
+        }
+        }
+
+      @media (max-width: 500px) {
+        .p-5 {
+            padding: 0px 20px !important;
+        }        
+       
+        #lateral  {
+        display: none  !important;
+        }
+        .btn-dark {
+        max-height: 38px;
+    }
+    .formulario {
+        width: max(500px, 200px);
+    }
+    .col-9 p-5 {
+        padding: 0;
+        margin: 0;
+    }
+
+}

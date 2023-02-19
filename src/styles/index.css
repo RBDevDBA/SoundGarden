@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #todos-eventos {
+    display: flex;
+  }
+  
+  @media (max-width: 1000px) {
+    body {
+      width: 100%;
+    }
+  
+    #todos-eventos {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: center;
+      
+    }
+    .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .col img {
+      width: 75%;
+    }
+  
+    header {
+      width: 100%;
+    }
+    .slider {
+      width: 100%;
+  }
+  }
+  
+  @media (max-width: 500px) {
+      .container {
+          align-items: center !important;
+          padding: 0 !important;
+              }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            align-items: center;
+      }
+    }

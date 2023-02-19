@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap%22");
+body {
+  font-family: "Questrial", sans-serif;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+header {
+  position: relative;
+  box-shadow: 0px 5px 4px 0px rgb(63 63 63 / 27%);
+  width: 100%;
+  background-color: #fff;
+}
+aside {
+  min-height: 100vh;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #c2185b;
+}
+
+.btn-primary {
+  background-color: #c2185b;
+  border-color: #c2185b;
+}
+
+main.login {
+  width: 400px;
+}
+
+section.full {
+  width: 100%;
+  min-height: 80vh;
+  padding: 50px 0;
+}
+
+article.evento {
+  width: 350px;
+}
+
+footer nav ul {
+  list-style: none;
+  display: flex;
+}
+
+footer nav ul li {
+  padding: 10px;
+}
+
+.modal-cadastrar {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-content {
+    margin: 0 auto;
+    margin-top: 8%;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 0 2px #fff;
+    padding: 60px 30px;
+    max-width: max(39vw, 300px);
+  }
+
+
+.fechar-modal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 3rem;
+  color: #333;
+  border: none;
+  background: none;
+  height: initial;
+}
+
+.mb-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-finalizar-reserva {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.finalizar-reserva {
+  background-color: #c2185b;
+  color: #fff;
+  border: #c2185b;
+  width: 252px;
+  height: 38px;
+  border-radius: 0.25rem;
+}
+
+.finalizar-reserva:hover {
+  transition: 0.15s all;
+  background-color: #d63384;
+}
+
+#loading {
+  margin: 5vw auto;
+}
+
+.carregando {
+  text-align: center;
+}
+
+.botoes-footer {
+  background-color: black;
+}
+
+label {
+  color: #000;
+}
+
+small {
+  color: rgb(128, 128, 128);
+}
+
+.h4-modal,
+.h2-modal {
+  text-align: center;
+}
+
+#tabela-responsividade {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  
+  #div-footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+#botao-adm {
+  width: 174.89px;
+}
+
+}
+
+@media (max-width: 500px) {
+  .row {
+    flex-direction: column;
+}
+
+span img {
+  width: 150px;
+}
+
+aside {
+   min-height: 10vh !important;
+}
+
+
+aside, main {
+   width: 100% !important;
+}
+hr {
+   display: none;
+}
+.p-5 {
+  padding: 0 3rem !important;
+}
+.col-6 {
+  width: 100% !important;
+}
+
+svg {
+  display: none;
+}
+
+#imagem-musica {
+  text-align: center;
+}
+#todos-eventos  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100 px;
+
+}
+}
