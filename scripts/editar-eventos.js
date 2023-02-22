@@ -5,7 +5,7 @@ const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
 const inputLotacao = document.querySelector("#lotacao");
 const form = document.querySelector("form");
-const BASE_URL = "https://soundgarden-api.vercel.app/events/:id";
+const BASE_URL = "https://soundgarden-api.vercel.app//events/:id";
 const urlParams = new URLSearchParams(window.location.search);
 const nomeParam = urlParams.get("_id");
 
@@ -18,7 +18,7 @@ const formatNumber = (numero) => {
 
 const resposta = async () => {
   try {
-    const resposta = await fetch("https://soundgarden-api.vercel.app/events/:id");
+    const resposta = await fetch(`${BASE_URL}/${nomeParam}`);
     if (resposta.ok) {
       const conteudoResposta = await resposta.json();
       inputNome.value = conteudoResposta.name;
@@ -58,7 +58,7 @@ form.onsubmit = async (evento) => {
       redirect: "follow",
     };
 
-    const resposta = await fetch(`${BASE_URL}/events/${nomeParam}`, opcoes);
+    const resposta = await fetch(`${BASE_URL}/${nomeParam}`, opcoes);
     const conteudoResposta = await resposta.json();
     console.log(conteudoResposta);
 

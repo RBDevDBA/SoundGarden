@@ -12,7 +12,7 @@ const formatarData = (data) => {
   return dataFormatada;
 };
 
-fetch("https://soundgarden-api.vercel.app/events")
+fetch(BASE_URL) // substituí a URL repetida pela constante BASE_URL
   .then((response) => {
     if (!response.ok) {
       throw new Error("Não foi possível carregar dados da página.");

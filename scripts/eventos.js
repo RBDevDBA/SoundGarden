@@ -4,14 +4,12 @@ let outputEventos = "";
 
 const formatarData = (data) => {
   const data2 = data.split("-");
-
   const dataFormatada =
-    data2.slice(2, 3).join("") +
+    data2.slice(2).join("/") +
     "/" +
-    data2.slice(1, 2).join("") +
+    data2.slice(1, 2) +
     "/" +
-    data2.slice(0, 1).join("");
-
+    data2.slice(0, 1);
   return dataFormatada;
 };
 

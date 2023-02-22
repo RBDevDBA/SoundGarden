@@ -5,7 +5,7 @@ const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
 const inputLotacao = document.querySelector("#lotacao");
 const form = document.querySelector("form");
-const BASE_URL = "https://soundgarden-api.vercel.app//events/:id";
+const BASE_URL = "https://soundgarden-api.vercel.app/events";
 const urlParams = new URLSearchParams(window.location.search);
 const nomeParam = urlParams.get("_id");
 
@@ -18,7 +18,7 @@ const formatNumber = (numero) => {
 
 const preencherFormulario = async () => {
   try {
-    const resposta = await fetch("https://soundgarden-api.vercel.app//events/:id");
+    const resposta = await fetch(`${BASE_URL}/${nomeParam}`);
     const conteudoResposta = await resposta.json();
     const newDate = new Date(conteudoResposta.scheduled);
 
@@ -52,7 +52,7 @@ form.onsubmit = async (evento) => {
         redirect: "follow",
       };
 
-      const resposta = await fetch(`${BASE_URL}/events/${nomeParam}`, opcoes);
+      const resposta = await fetch(`${BASE_URL}/${nomeParam}`, opcoes);
 
       alert("Evento excluído com sucesso");
       window.location.replace("./admin.html");

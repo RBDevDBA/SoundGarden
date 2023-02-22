@@ -6,7 +6,7 @@ const lotacaoInput = document.querySelector("#lotacao");
 const linkImgInput = document.querySelector("#poster");
 const form = document.querySelector("form");
 
-const BASE_URL = "https://soundgarden-api.vercel.app/events";
+const BASE_URL = "https://soundgarden-api.vercel.app";
 
 form.onsubmit = async (evento) => {
   evento.preventDefault();
@@ -16,8 +16,8 @@ form.onsubmit = async (evento) => {
       poster: linkImgInput.value,
       attractions: atracoesInput.value.split(","),
       description: descricaoInput.value,
-      scheduled_date: dataInput.value,
-      tickets_available: lotacaoInput.value,
+      scheduled: dataInput.value,
+      number_tickets: lotacaoInput.value,
     };
 
     const opcoes = {
@@ -29,18 +29,18 @@ form.onsubmit = async (evento) => {
       redirect: "follow",
     };
 
-    const resposta = await fetch("$https://soundgarden-api.vercel.app/events", opcoes);
+    const resposta = await fetch(`${BASE_URL}/events`, opcoes);
     const conteudoResposta = await resposta.json();
     console.log(conteudoResposta);
 
-    if (resposta.status >= 400) {
-      alert("Cadastro negado. Preencha os campos corretamente.");
-    } else {
+    if (resposta.status != 400) {
       alert("Evento cadastrado com sucesso");
       window.location.replace("./admin.html");
     }
+    if (resposta.status == 400) {
+      alert("Cadastro negado. Preencha os campos corretamente.");
+    }
   } catch (error) {
     console.log(error);
-    alert("Erro ao cadastrar evento. Tente novamente mais tarde.");
   }
 };

@@ -1,45 +1,46 @@
 const nomeInput = document.querySelector("#nome");
-const emailInput = document.querySelector("#email");
-const ingressosInput = document.querySelector("#ingressos");
-const formModal = document.querySelector("form");
-const BASE_URL = "https://soundgarden-api.vercel.app/bookings";
+const atracoesInput = document.querySelector("#atracoes");
+const descricaoInput = document.querySelector("#descricao");
+const dataInput = document.querySelector("#data");
+const lotacaoInput = document.querySelector("#lotacao");
+const linkImgInput = document.querySelector("#poster");
+const form = document.querySelector("form");
 
-function click2() {
-  const formsModal = document.querySelectorAll("form");
-  formsModal.forEach((form) => {
-    form.addEventListener("submit", async (evento) => {
-      evento.preventDefault();
-      try {
-        const novoEvento = {
-          owner_name: nomeInput.value,
-          owner_email: emailInput.value,
-          number_tickets: ingressosInput.value,
-          event_id: evento.target.getAttribute("event-id"),
-        };
+const BASE_URL = "https://soundgarden-api.vercel.app/";
 
-        const opcoes = {
-          method: "POST",
-          body: JSON.stringify(novoEvento),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        };
+form.onsubmit = async (evento) => {
+  evento.preventDefault();
+  try {
+    const novoEvento = {
+      name: nomeInput.value,
+      poster: linkImgInput.value,
+      attractions: atracoesInput.value.split(","),
+      description: descricaoInput.value,
+      scheduled: dataInput.value,
+      number_tickets: lotacaoInput.value,
+    };
 
-        const resposta = await fetch ("https://soundgarden-api.vercel.app/bookings", opcoes);
-        const conteudoResposta = await resposta.json();
+    const opcoes = {
+      method: "POST",
+      body: JSON.stringify(novoEvento),
+      headers: {
+        "content-type": "application/json",
+      },
+      redirect: "follow",
+    };
 
-        if (resposta.ok) {
-          alert("Ingresso reservado com sucesso");
-          formModal.style.display = "none";
-          nomeInput.value = "";
-          emailInput.value = "";
-          ingressosInput.value = "";
-        } else {
-          alert("Reserva negada. Preencha os campos corretamente.");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    });
-  });
-}
+    const resposta = await fetch(`${BASE_URL}/events`, opcoes);
+    const conteudoResposta = await resposta.json();
+    console.log(conteudoResposta);
+
+    if (resposta.status != 400) {
+      alert("Evento cadastrado com sucesso");
+      window.location.replace("./admin.html");
+    }
+    if (resposta.status == 400) {
+      alert("Cadastro negado. Preencha os campos corretamente.");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -1,16 +1,11 @@
-const BASE_URL = "https://soundgarden-api.vercel.app/bookings";
+const BASE_URL = "https://soundgarden-api.vercel.app";
 const listaReservas = document.querySelector(".table-body");
 let outputReservas = "";
-
-// Obtém o parâmetro "_id" da URL
 const urlParams = new URLSearchParams(window.location.search);
 const nomeParam = urlParams.get("_id");
-
-// Seleciona o elemento de carregando e esconde-o
 const carregando = document.querySelector(".carregando");
-carregando.style.display = "none";
 
-fetch("https://soundgarden-api.vercel.app/bookings ${nomeParam}")
+fetch(`${BASE_URL}/bookings/event/${nomeParam}`)
   .then((value) => {
     return value.json();
   })
@@ -31,6 +26,7 @@ fetch("https://soundgarden-api.vercel.app/bookings ${nomeParam}")
       </tr>`;
     });
     listaReservas.innerHTML = outputReservas;
+    carregando.style.display = "none";
   })
   .catch((error) => {
     console.log(error);
